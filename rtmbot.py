@@ -33,10 +33,6 @@ class RtmBot(object):
         self.load_plugins()
         while True:
             for reply in self.slack_client.rtm_read():
-                print("reply: "+str(reply))
-                if(reply['type'] == "message"):
-                    if "<@U0EGJE77D>" in reply['text']:
-                        print("someone is addressing angerbot")
                 self.input(reply)
             self.crons()
             self.output()
